@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
@@ -11,6 +12,7 @@ import { MaterialModule } from './material.module';
   declarations: [
     AppComponent
   ],
+  entryComponents: [AppComponent],
   imports: [
     BrowserModule,
     HttpModule,
@@ -20,7 +22,8 @@ import { MaterialModule } from './material.module';
     MaterialModule
   ],
   providers: [
-    AppService
+    AppService,
+    MatSnackBar
   ],
   bootstrap: [AppComponent]
 })

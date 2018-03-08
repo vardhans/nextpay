@@ -12,22 +12,17 @@ import {
 } from '@angular/material';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatFormFieldModule,
-    MatInputModule,
-    BrowserAnimationsModule
-  ],
   exports: [
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    MatSnackBarModule
   ]
 })
 export class MaterialModule { }

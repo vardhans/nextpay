@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   form: FormGroup;
   submited = false;
 
-  constructor(private _appService: AppService) { }
+  constructor(private _appService: AppService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     const numberPattern = '^(0|[1-9][0-9]*)$';
@@ -44,12 +44,14 @@ export class AppComponent implements OnInit {
     }
     this._appService.postData(this.form.value)
       .subscribe(() => {
-        window.alert('payment saved');
-        this.form.controls.bsb.setValue('');
-        this.form.controls.accNo.setValue('');
-        this.form.controls.accName.setValue('');
-        this.form.controls.payRef.setValue('');
-        this.form.controls.amount.setValue('');
+        const snackBarRef = this.snackBar.open("Payment details submited successfully.", "Ok");
+        snackBarRef.afterDismissed().subscribe(() => {
+          this.form.controls.bsb.setValue('');
+          this.form.controls.accNo.setValue('');
+          this.form.controls.accName.setValue('');
+          this.form.controls.payRef.setValue('');
+          this.form.controls.amount.setValue('');
+        });
       });
   }
 

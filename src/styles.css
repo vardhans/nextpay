@@ -24,3 +24,9 @@
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
   }
+
+snack-bar-container{
+    position: fixed;
+    bottom: 1.281rem;
+    right: 1.281rem;
+}
